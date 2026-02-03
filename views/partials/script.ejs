@@ -1,0 +1,34 @@
+<script>
+  (function () {
+    // Initialize theme from localStorage or system preference
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    const toggleBtn = document.getElementById('theme-toggle')
+    const icon = document.getElementById('theme-icon')
+
+    if (!toggleBtn || !icon) return
+
+    function updateIcon() {
+      icon.textContent = document.documentElement.classList.contains('dark')
+        ? '☀️'
+        : '🌙'
+    }
+
+    updateIcon()
+
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark')
+      localStorage.theme = document.documentElement.classList.contains('dark')
+        ? 'dark'
+        : 'light'
+      updateIcon()
+    })
+  })()
+</script>

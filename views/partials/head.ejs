@@ -1,0 +1,12 @@
+<!-- Dark mode init (MUST be before CSS) -->
+<script>
+  if (
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    document.documentElement.classList.add('dark')
+  }
+</script>
+
+<!-- Your custom styles (if any) -->
+<link rel="stylesheet" href="/css/tailwind.css">
