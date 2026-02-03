@@ -1,6 +1,7 @@
 👨‍💻 Author
 Galib Khan
 Full Stack Developer (MERN)
+Link-Shortner-env.eba-gjretev2.ap-south-1.elasticbeanstalk.com
 
 # URL Shortener
 
